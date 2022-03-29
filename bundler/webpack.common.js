@@ -75,6 +75,22 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(glb|gltf)$/,
+                use:
+                [
+                    {
+                        loader: 'file-loader',
+                        options:
+                        {
+                            outputPath: 'assets/models/',
+                            publicPath: './',
+                            name: '[name].[ext]'
+                        }
+                    }
+                ]
+            },
+            
+            {
                 test: /\.s[ac]ss$/i,
                 use: [
                     // Creates `style` nodes from JS strings
