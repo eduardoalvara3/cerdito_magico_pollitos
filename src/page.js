@@ -34,8 +34,8 @@ async function runPage(){
         siguiente_btn.on('click',nextPage);
         final_wrapper.fadeOut("slow")
         // debug
-        cuentame()
-        final()
+        // cuentame()
+        // final()
     });
 
     $(document).on('scroll',function () {
