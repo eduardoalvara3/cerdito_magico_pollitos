@@ -1,0 +1,121 @@
+$navy_bg: #0e233d00;
+$navy: #fffa0047;
+$mist: #f7c9fb;
+$red: #d8d51e;
+
+$partical-position-list: 20, 90, 80, 25, 18, 85, 75, 30, 20, 85, 75, 15; 
+
+@keyframes spin-360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cascade-down {
+  0% {
+    transform: translateY(0,-8px);
+  }
+
+//   20% {
+//     transform: translateY(20px,20vh);
+//   }
+
+//   50% {
+//     transform: translateY(-6px,50vh);
+//   }
+
+  100% {
+    transform: translate(0,103vh);
+  }
+}
+
+.Dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $navy_bg;
+  
+  &-members {
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate3d(0, 0, 0);
+    // z-index: 99;
+    overflow: hidden;
+    
+    &:before {
+      content: '';
+      display: block;
+      background: linear-gradient(0deg, rgba($navy, 0), $navy);
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30%;
+      // border-bottom: 1px solid white;
+      position: absolute;
+      z-index: 990;
+    }
+
+
+    &-dot {
+      position: relative;
+      animation: 26s cascade-down linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 12;
+      left: nth($partical-position-list, 1) * 1%;
+
+      $elements: 10;
+
+      @for $i from 0 to $elements {
+        // $offset: random(12);
+        
+        &:nth-child(#{$i}) {           
+           left: nth($partical-position-list, $i + 1) * 1%;
+           top: 0;
+           animation-delay: #{$i * 2500}ms;
+
+           .Member{
+             animation-delay: #{$i * 2500}ms;            
+           }
+        }
+      }
+
+    }
+  }
+
+}
+
+.Member {
+  position: absolute;
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  // background-color: #{$red};
+  animation: spin-360 2000ms infinite linear;
+
+
+  &:after {
+    content: '';
+    border-radius: 100%;
+    display: block;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    background-image: url(ls.png);
+
+    // border: 1px solid #{$mist};
+
+  }
+}
+.with-hearts .Member:after {
+    background-image: url(ht.png);
+
+}
