@@ -83,7 +83,7 @@ module.exports = {
                         options:
                         {
                             outputPath: 'assets/models/',
-                            publicPath: './',
+                            publicPath: './cerdito_magico_pollitos',
                             name: '[name].[ext]'
                         }
                     }
