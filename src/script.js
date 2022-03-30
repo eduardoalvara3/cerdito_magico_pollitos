@@ -38,7 +38,7 @@ async function run(){
     
     const loader = new GLTFLoader();
 
-    await loader.loadAsync('/cerdito_magico.glb', function (gltf) {
+    await loader.loadAsync('./cerdito_magico.glb', function (gltf) {
         // console.log(geometry);
         
         
