@@ -15,7 +15,7 @@ let siguiente_btn = $('#siguiente');
 let page = 0;
 let textito_wrapper = $('#textito-wrapper')
 let bg = $('#background')
-let start = $('#start')
+let audio = new Audio('./merry-go-round_of_life.mp3');
 
 hojas.find('img').fadeOut('slow')
 textito_wrapper.fadeOut('slow')
@@ -34,10 +34,12 @@ async function runPage(){
         cuentame_btns.on('click', cuentame);
         siguiente_btn.on('click',nextPage);
         final_wrapper.fadeOut("slow");
-        start.fadeOut("slow");
         
-        var audio = new Audio('./merry-go-round_of_life.mp3');
-        audio.play();
+        cerdito_magico_wrapper.removeClass('starting');
+        setTimeout(() => {
+            message_wrapper.fadeIn("slow")
+        }, 3000);
+
         // debug
         // cuentame()
         // final()
@@ -84,6 +86,8 @@ function cuentame(){
 
 
     setTimeout(loadPage, 4000);
+
+    audio.play();
 
 }
 

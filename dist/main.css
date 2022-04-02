@@ -59,15 +59,18 @@ body
     display: block;
 }
 
-
-
 #cerdito-magico-wrapper{
     transition-property: top, padding-top;
     transition-duration: 1s;
     transition-timing-function: ease;
     transition-delay: 0s;
+    top:0;
+    transition: top 3s ease;
 }
 
+#cerdito-magico-wrapper.starting{
+    top: -1000px;
+}
 #cerdito-magico{
     position: relative;
     top: 0;
@@ -237,9 +240,6 @@ h1{
     margin-right: 7vw;
     margin-left: 7vw;
 }
-#cuentito-wrapper .btns-container{
-
-}
 
 
 @media (min-width: 200px) {
@@ -288,14 +288,5 @@ h1{
     }
 }
 
-#start{
-    opacity: 1;
-    background: white;
-    z-index: 99999;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    box-shadow: 0px 0px 200px #fffa00 inset;
-}
 
 /*# sourceMappingURL=main.css.map*/
