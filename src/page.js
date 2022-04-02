@@ -15,6 +15,7 @@ let siguiente_btn = $('#siguiente');
 let page = 0;
 let textito_wrapper = $('#textito-wrapper')
 let bg = $('#background')
+let start = $('#start')
 
 hojas.find('img').fadeOut('slow')
 textito_wrapper.fadeOut('slow')
@@ -32,7 +33,11 @@ async function runPage(){
     $(function () {
         cuentame_btns.on('click', cuentame);
         siguiente_btn.on('click',nextPage);
-        final_wrapper.fadeOut("slow")
+        final_wrapper.fadeOut("slow");
+        start.fadeOut("slow");
+        
+        var audio = new Audio('./merry-go-round_of_life.mp3');
+        audio.play();
         // debug
         // cuentame()
         // final()

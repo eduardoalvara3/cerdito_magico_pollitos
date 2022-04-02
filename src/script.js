@@ -13,8 +13,7 @@ async function run(){
 
 
     // loading
-    const textureLoader = new THREE.TextureLoader();
-    const normalTexture = textureLoader.load('/textures/normalMap.jpg');
+    // const textureLoader = new THREE.TextureLoader();
 
     // Canvas
     const canvas = document.querySelector('canvas.webgl')
