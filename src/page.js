@@ -87,6 +87,7 @@ function cuentame(){
 
     setTimeout(loadPage, 4000);
 
+    audio.loop = true;
     audio.play();
 
 }
